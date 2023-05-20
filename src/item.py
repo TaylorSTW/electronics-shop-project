@@ -82,3 +82,9 @@ class Item:
             return int(any_string)
         except ValueError:
             return int(any_string[0: any_string.find('.')])
+
+    def __add__(self, other):
+        if isinstance(other, Item):
+            return self.quantity + other.quantity
+        else:
+            raise ValueError('You cannot add different classes')
